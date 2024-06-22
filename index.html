@@ -2,20 +2,27 @@
 <html lang="en">
 
 <head>
+    <!-- Metadados do documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link para o arquivo CSS externo -->
     <link rel="stylesheet" href="style.css" />
+    <!-- Link para a biblioteca de ícones Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Título da página -->
     <title>Meu Bloco de Notas</title>
 </head>
 
 <body>
+    <!-- Botão para adicionar uma nova nota -->
     <button class="adicionar" id="adicionar">
         <i class="fas fa-plus"></i> Nova nota
     </button>
 
+    <!-- Estrutura de uma nota comentada como exemplo, não exibida na página -->
+    <!-- 
     <div class="nota">
         <div class="configuracao">
             <button class="editar">
@@ -30,11 +37,13 @@
         <div class="main hidden"></div>
         <textarea></textarea>
     </div>
+    --> 
 
-
+    <!-- Link para a biblioteca Marked.js para converter Markdown em HTML -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/3.0.8/marked.min.js"
         integrity="sha512-OA0KzIFyfjEiECfdTeeqyDa++XmSLWyIBr8bWf2lpdv3qNr2TxpR9uaL2fKaz/Nz35kVVPEagjhWdWat/khWXw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Link para o arquivo JavaScript externo -->
     <script src="script.js"></script>
 </body>
 
