@@ -1,15 +1,17 @@
 // Obtém o botão com o id 'adicionar'
-const adcionarBtn = document.getElementById('adicionar');
+const adicionarBtn = document.getElementById('adicionar');
+// Obtém o container de notas
+const notasContainer = document.getElementById('notas-container');
 // Recupera e converte de volta ao formato original as notas armazenadas no localStorage
 const notas = JSON.parse(localStorage.getItem("notas"));
 
 // Se houver notas armazenadas, adiciona cada uma delas à página
-if(notas) {
+if (notas) {
     notas.forEach(nota => adicionarNovaNota(nota));
 }
 
 // Adiciona um evento de clique ao botão 'adicionar', que cria uma nova nota vazia
-adcionarBtn.addEventListener('click', () => adicionarNovaNota());
+adicionarBtn.addEventListener('click', () => adicionarNovaNota());
 
 // Função para adicionar uma nova nota
 function adicionarNovaNota(text = '') {
@@ -33,7 +35,7 @@ function adicionarNovaNota(text = '') {
 
     // Seleciona os elementos '.editar', '.deletar', '.main', e 'textarea' da nota criada
     const btnEditar = nota.querySelector('.editar');
-    const bntDeletar = nota.querySelector('.deletar');
+    const btnDeletar = nota.querySelector('.deletar');
     const main = nota.querySelector('.main');
     const textarea = nota.querySelector('textarea');
 
@@ -42,7 +44,7 @@ function adicionarNovaNota(text = '') {
     main.innerHTML = marked(text);
 
     // Adiciona evento de clique ao botão de deletar para remover a nota e atualizar o localStorage
-    bntDeletar.addEventListener('click', () => {
+    btnDeletar.addEventListener('click', () => {
         nota.remove();
         storage();
     });
@@ -60,8 +62,8 @@ function adicionarNovaNota(text = '') {
         storage();
     });
 
-    // Adiciona a nova nota ao corpo do documento
-    document.body.appendChild(nota);
+    // Adiciona a nova nota ao container de notas
+    notasContainer.appendChild(nota);
 }
 
 // Função para armazenar as notas no localStorage

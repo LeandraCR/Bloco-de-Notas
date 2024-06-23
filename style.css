@@ -1,7 +1,8 @@
 /* Definição das variáveis CSS */
 :root {
     --white: #fff; /* Cor branca */
-    --DeepPink: #f17ea1; /* Cor rosa profundo */
+    --DeepPink: #ed7c70; /* Cor rosa profundo */
+    --lightPink: #FFEACC; /* Cor rosa claro */
 }
 
 /* Definição do box-sizing para todos os elementos */
@@ -11,11 +12,23 @@
 
 /* Estilização do body */
 body {
-    padding-top: 3rem; /* Espaçamento no topo */
+    padding-top: 2rem; /* Espaçamento no topo */
     margin: 0; /* Remove as margens padrão */
-    flex-wrap: wrap; /* Permite que os elementos dentro do body quebrem para a próxima linha */
     display: flex; /* Define o body como um container flexível */
-    background-color: #FFB6C1; /* Cor de fundo rosa claro */
+    flex-direction: column; /* Define a direção dos elementos como coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    background-color: var(--lightPink); /* Cor de fundo rosa claro */
+    font-family: Arial, Helvetica, sans-serif; /* Fonte mais descontraída e fofa */
+    position: relative; /* Necessário para posicionar a logo */
+}
+
+/* Estilização da logo */
+.logo {
+    position: absolute; /* Posiciona a logo de forma absoluta */
+    top: 1rem; /* Espaçamento do topo */
+    left: 1rem; /* Espaçamento da esquerda */
+    width: 170px; /* Largura da logo */
+    height: auto; /* Altura automática para manter a proporção */
 }
 
 /* Estilização do botão de adicionar */
@@ -25,19 +38,38 @@ body {
     right: 1rem; /* Espaçamento da direita */
     background-color: var(--DeepPink); /* Cor de fundo rosa profundo */
     color: var(--white); /* Cor do texto branca */
-    border-radius: 3px; /* Borda arredondada */
+    border-radius: 12px; /* Borda arredondada maior para um visual mais fofo */
     padding: 0.5rem 1rem; /* Espaçamento interno */
     cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
     border: none; /* Remove a borda padrão */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para dar um efeito mais elegante */
+    transition: background-color 0.3s ease; /* Transição suave ao mudar a cor de fundo */
+}
+
+.adicionar:hover {
+    background-color: #d35c4f; /* Muda a cor de fundo ao passar o mouse */
+}
+
+/* Container para as notas */
+.notas-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os itens no container */
+    gap: 20px; /* Espaçamento entre as notas */
+    padding-top: 100px; /* Adiciona espaço para a navbar */
 }
 
 /* Estilização da nota */
 .nota {
     background-color: var(--white); /* Cor de fundo branca */
-    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1); /* Sombra ao redor da nota */
-    margin: 30px 20px; /* Margens ao redor da nota */
+    background-image: url('imagens/FundoNotas.png'); /* URL da imagem de fundo */
+    background-size: cover; /* Redimensiona a imagem para cobrir todo o fundo */
+    background-position: center; /* Centraliza a imagem de fundo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ao redor da nota */
     height: 400px; /* Altura fixa */
-    width: 400px; /* Largura fixa */
+    width: 300px; /* Largura fixa ajustada para caber 3 por linha */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassar a borda */
 }
 
 /* Estilização da seção de configuração da nota */
@@ -46,6 +78,7 @@ body {
     display: flex; /* Define a seção como um container flexível */
     justify-content: flex-end; /* Alinha os itens ao final */
     padding: 0.5rem; /* Espaçamento interno */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Borda inferior suave */
 }
 
 /* Estilização dos botões dentro da seção de configuração */
@@ -56,17 +89,24 @@ body {
     font-size: 1rem; /* Tamanho da fonte */
     margin-left: 0.5rem; /* Margem à esquerda */
     border: none; /* Remove a borda padrão */
+    transition: color 0.3s ease; /* Transição suave ao mudar a cor */
+}
+
+.nota .configuracao button:hover {
+    color: #e0e0e0; /* Muda a cor do texto ao passar o mouse */
 }
 
 /* Estilização do textarea dentro da nota */
 .nota textarea {
     outline: none; /* Remove a linha de destaque ao focar */
-    font-family: inherit; /* Herdar a fonte do elemento pai */
+    font-family: Arial, Helvetica, sans-serif; /* Fonte descontraída e fofa */
     font-size: 1.2rem; /* Tamanho da fonte */
     border: none; /* Remove a borda padrão */
     height: 400px; /* Altura fixa */
     width: 100%; /* Largura completa */
     padding: 20px; /* Espaçamento interno */
+    resize: none; /* Impede o redimensionamento */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente para texto */
 }
 
 /* Estilização da seção principal da nota */

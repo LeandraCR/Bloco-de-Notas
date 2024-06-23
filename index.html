@@ -16,28 +16,16 @@
 </head>
 
 <body>
+    <!-- Adicione a logo aqui -->
+    <img src="imagens/Logo.png" alt="Logo" class="logo">
+
     <!-- Botão para adicionar uma nova nota -->
     <button class="adicionar" id="adicionar">
         <i class="fas fa-plus"></i> Nova nota
     </button>
 
-    <!-- Estrutura de uma nota comentada como exemplo, não exibida na página -->
-    <!-- 
-    <div class="nota">
-        <div class="configuracao">
-            <button class="editar">
-                <i class="fas fa-edit"></i>
-            </button>
-
-            <button class="deletar">
-                <i class="fas fa-trash-alt"></i>
-            </button>
-        </div>
-
-        <div class="main hidden"></div>
-        <textarea></textarea>
-    </div>
-    --> 
+    <!-- Container para as notas -->
+    <div class="notas-container" id="notas-container"></div>
 
     <!-- Link para a biblioteca Marked.js para converter Markdown em HTML -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/3.0.8/marked.min.js"
